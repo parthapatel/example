@@ -2,8 +2,11 @@
 @RequestMapping()
 public class UserController{
 	
-	@AutoWired
 	private UserService userService;
+
+	public UserController(){
+		this.userService = new UserService();
+	}
 
 	@GetMapping
 	public List<User> getAllUser(){
